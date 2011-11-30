@@ -24,6 +24,8 @@ echo "Setup ssmtp"
 rm /etc/ssmtp/ssmtp.conf 
 ln /opt/arpu_lift/server-config/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf -s
 sed -i "s/MYHOSTNAME/`hostname`/g" /opt/arpu_lift/server-config/ssmtp/ssmtp.conf
+rm /etc/ssmtp/revaliases 
+ln  /opt/arpu_lift/server-config/ssmtp/revaliases /etc/ssmtp/revaliases -s
 
 # Setup Monit
 echo "Setup monit"
