@@ -139,7 +139,7 @@ status(){
 }
 
 removePIDFile(){
-  if [ -f $PIDSPATH/PIDFILE ]; then
+  if [ -f $PIDSPATH/$PIDFILE ]; then
     rm -f $PIDSPATH/$PIDFILE
   fi
 }
