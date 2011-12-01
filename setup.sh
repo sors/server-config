@@ -27,6 +27,11 @@ sed -i "s/MYHOSTNAME/`hostname`/g" /opt/arpu_lift/server-config/ssmtp/ssmtp.conf
 rm /etc/ssmtp/revaliases 
 ln  /opt/arpu_lift/server-config/ssmtp/revaliases /etc/ssmtp/revaliases -s
 
+# Copy ssh keys
+echo "Copy ssh keys"
+mkdir /root/.ssh
+cp /opt/arpu_lift/server-config/ssh/* /root/.ssh
+
 # Setup Monit
 echo "Setup monit"
 rm /etc/default/monit
