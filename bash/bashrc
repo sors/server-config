@@ -103,9 +103,9 @@ fi
 
 alias ll='ls -la'
 GREEN="\[\033[0;32m\]"
+RED='\e[0;31m' # Red
 NO_COLOUR="\[\033[0m\]"
-
-PS1="$GREEN\u@\h$NO_COLOUR\w\$ "
+PS1="$RED\u@\h$NO_COLOUR\w\$ "
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -113,4 +113,8 @@ export LC_ALL=en_US.UTF-8
 
 
 export PATH=$PATH:/opt/nginx/sbin/
+export MYSQL_PS1="mysql [\d]> "
 
+if [ -x /usr/bin/rlwrap ]; then
+  alias mysql='/usr/bin/rlwrap -a -pred /usr/bin/mysql'
+fi
