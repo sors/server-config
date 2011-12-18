@@ -1,0 +1,8 @@
+if ENV['RAILS_ENV']
+  renv = ENV['RAILS_ENV']
+  red="\e[0;31m"
+  clear_color="\033[0m"
+  prompt =  "#{red}#{renv}> #{clear_color}"
+  IRB.conf[:PROMPT].reverse_merge!(:RAILS_ENV => {:PROMPT_I=>prompt, :PROMPT_N=>prompt, :PROMPT_S=>nil, :PROMPT_C=>prompt, :RETURN=>"=> %s\n"})
+  IRB.conf[:PROMPT_MODE] = :RAILS_ENV
+end
